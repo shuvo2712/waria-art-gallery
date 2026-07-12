@@ -44,7 +44,7 @@
       </div>
       <div class="hero-image-wrap">
         <div class="hero-image-frame">
-          <img src="https://images.unsplash.com/photo-1618220048045-10a6dbdf83e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80" alt="Modern living room with framed wall art" loading="lazy" />
+          <img id="hero-slideshow-img" src="pictures/1.jpeg" alt="Featured Hand-Crafted Wall Art" loading="lazy" />
         </div>
         <div class="hero-badge-float">
           <span class="badge-num">200+</span>
@@ -75,40 +75,40 @@
         <p>Three worlds of art, one gallery. Find the perfect style for your space.</p>
       </div>
       <div class="categories-grid">
-        <div class="category-card" data-category="abstract">
+        <div class="category-card" data-category="wood-carvings">
           <div class="category-img-wrap">
-            <img src="https://images.unsplash.com/photo-1761156254622-7b66649b1f69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=700&q=80" alt="Minimalist Abstract Art" loading="lazy" />
+            <img src="pictures/2.jpeg" alt="Wooden &amp; Relief Carvings Collection" loading="lazy" />
             <div class="category-overlay">
               <a href="#gallery" class="btn btn-light">View Collection</a>
             </div>
           </div>
           <div class="category-info">
-            <h3>Minimalist Abstract</h3>
-            <p>Clean lines, bold forms, quiet elegance</p>
+            <h3>Wooden &amp; Relief Carvings</h3>
+            <p>Intricate hand-carved panels and woven bamboo relief</p>
           </div>
         </div>
-        <div class="category-card" data-category="anime">
+        <div class="category-card" data-category="paintings-drawings">
           <div class="category-img-wrap">
-            <img src="https://images.unsplash.com/photo-1648316143181-247041b53999?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=700&q=80" alt="Pop Culture and Anime Art" loading="lazy" />
+            <img src="pictures/3.jpeg" alt="Paintings &amp; Drawings Collection" loading="lazy" />
             <div class="category-overlay">
               <a href="#gallery" class="btn btn-light">View Collection</a>
             </div>
           </div>
           <div class="category-info">
-            <h3>Pop Culture &amp; Anime</h3>
-            <p>Icons, characters, and culture on canvas</p>
+            <h3>Paintings &amp; Ink Drawings</h3>
+            <p>Expressive watercolors, acrylics, and fine line drawings</p>
           </div>
         </div>
-        <div class="category-card" data-category="nature">
+        <div class="category-card" data-category="mixed-media">
           <div class="category-img-wrap">
-            <img src="https://images.unsplash.com/photo-1759954034155-6378362c87f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=700&q=80" alt="Nature and Landscapes Art" loading="lazy" />
+            <img src="pictures/7.jpeg" alt="Mixed Media &amp; Textile Collection" loading="lazy" />
             <div class="category-overlay">
               <a href="#gallery" class="btn btn-light">View Collection</a>
             </div>
           </div>
           <div class="category-info">
-            <h3>Nature &amp; Landscapes</h3>
-            <p>Serene vistas and organic beauty</p>
+            <h3>Mixed Media &amp; Textile Art</h3>
+            <p>Embroidered tapestries, twigs collage, and textured tiles</p>
           </div>
         </div>
       </div>
@@ -126,128 +126,18 @@
       <!-- GALLERY FILTERS -->
       <div class="gallery-filters">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="abstract">Minimalist Abstract</button>
-        <button class="filter-btn" data-filter="nature">Nature &amp; Landscapes</button>
+        <button class="filter-btn" data-filter="wood-carvings">Wooden &amp; Relief Carvings</button>
+        <button class="filter-btn" data-filter="paintings-drawings">Paintings &amp; Drawings</button>
+        <button class="filter-btn" data-filter="mixed-media">Mixed Media &amp; Textile</button>
       </div>
 
       <div class="gallery-grid" id="gallery-grid">
+        <!-- Products will be generated dynamically by JavaScript -->
+      </div>
 
-        <div class="product-card" data-category="abstract">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1586032788085-d75f745f26e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Abstract Flow No.1" loading="lazy" />
-            <div class="product-badge">Bestseller</div>
-          </div>
-          <div class="product-info">
-            <h4>Abstract Flow No.1</h4>
-            <p class="product-size">A3 / A2 / A1 Available</p>
-            <div class="product-footer">
-              <span class="price">From RM 45</span>
-              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="nature">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1700212031699-45c913d65aa2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Vintage Botanicals" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <h4>Vintage Botanicals</h4>
-            <p class="product-size">A3 / A2 / A1 Available</p>
-            <div class="product-footer">
-              <span class="price">From RM 45</span>
-              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="nature">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1615752593342-d39f4e68fae1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Mountain Silhouette" loading="lazy" />
-            <div class="product-badge new">New</div>
-          </div>
-          <div class="product-info">
-            <h4>Mountain Silhouette</h4>
-            <p class="product-size">A3 / A2 / A1 Available</p>
-            <div class="product-footer">
-              <span class="price">From RM 50</span>
-              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="abstract">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1744057137174-72a54712fd83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Geometric Bauhaus" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <h4>Geometric Bauhaus</h4>
-            <p class="product-size">A3 / A2 / A1 Available</p>
-            <div class="product-footer">
-              <span class="price">From RM 45</span>
-              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="nature">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1693068606555-fc22eae4ba0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Wildflower Study" loading="lazy" />
-            <div class="product-badge">Popular</div>
-          </div>
-          <div class="product-info">
-            <h4>Wildflower Study</h4>
-            <p class="product-size">A3 / A2 / A1 Available</p>
-            <div class="product-footer">
-              <span class="price">From RM 45</span>
-              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="nature">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1569498278089-8ea21ba1a512?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Dusk Peaks" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <h4>Dusk Peaks</h4>
-            <p class="product-size">A3 / A2 / A1 Available</p>
-            <div class="product-footer">
-              <span class="price">From RM 50</span>
-              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="abstract">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1698240087583-2f610faf1eaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Wave Motion" loading="lazy" />
-            <div class="product-badge new">New</div>
-          </div>
-          <div class="product-info">
-            <h4>Wave Motion</h4>
-            <p class="product-size">A3 / A2 / A1 Available</p>
-            <div class="product-footer">
-              <span class="price">From RM 45</span>
-              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="nature">
-          <div class="product-img-wrap">
-            <img src="https://images.unsplash.com/photo-1693068606555-fc22eae4ba0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Iris Botanical" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <h4>Iris Botanical</h4>
-            <p class="product-size">A3 / A2 / A1 Available</p>
-            <div class="product-footer">
-              <span class="price">From RM 45</span>
-              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
-            </div>
-          </div>
-        </div>
-
+      <!-- SHOW MORE BUTTON -->
+      <div class="show-more-wrap">
+        <button class="btn btn-ghost" id="show-more-btn">Show More Artworks</button>
       </div>
 
       <div class="gallery-cta" id="gallery-cta">
@@ -356,7 +246,7 @@
       <div class="lightbox-details">
         <span class="lightbox-badge" id="lightbox-badge">Bestseller</span>
         <h3 id="lightbox-title">Artwork Title</h3>
-        <p class="lightbox-price" id="lightbox-price">From RM 45</p>
+        <p class="lightbox-price" id="lightbox-price">Starting from 2000 BDT</p>
         <p class="lightbox-sizes-title">Available Sizes:</p>
         <div class="lightbox-sizes" id="lightbox-sizes">
           <span class="size-tag active" data-size="A3">A3 (29.7 x 42 cm)</span>
