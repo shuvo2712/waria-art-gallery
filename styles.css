@@ -12,7 +12,7 @@
   --fg: #1A1A1A;
   --gray: #E7E7E7;
   --muted: #888;
-  --accent: #1A1A1A;
+
   --white: #FFFFFF;
   --radius: 12px;
   --radius-sm: 8px;
@@ -93,7 +93,7 @@ h1, h2, h3, h4 {
 .btn-ghost {
   background: transparent;
   color: var(--fg);
-  border-color: var(--gray);
+  border-color: var(--fg);
 }
 
 .btn-ghost:hover {
@@ -321,23 +321,42 @@ h1, h2, h3, h4 {
 }
 
 /* ========================
-   DIVIDER TEXT
+   MARQUEE TICKER
 ======================== */
-.divider-text {
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-strip {
   margin-top: 80px;
   border-top: 1px solid var(--gray);
   border-bottom: 1px solid var(--gray);
-  padding: 18px 24px;
+  padding: 18px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
   display: flex;
+  width: max-content;
+  animation: marquee-scroll 18s linear infinite;
+  will-change: transform;
+}
+.marquee-content {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 24px;
-  flex-wrap: wrap;
+  padding-left: 24px;
+}
+
+.marquee-content span {
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
+  flex-shrink: 0;
 }
 
 .dot {
@@ -459,7 +478,10 @@ h1, h2, h3, h4 {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.25s ease;
 }
 
 .product-card:hover {
@@ -821,7 +843,7 @@ h1, h2, h3, h4 {
   .nav.open {
     transform: translateY(0);
     opacity: 1;
-    pointer-events: all;
+    pointer-events: auto;
   }
 
   .nav a:not(.btn) {
@@ -870,10 +892,7 @@ h1, h2, h3, h4 {
     justify-content: center;
   }
 
-  .divider-text {
-    gap: 12px;
-    font-size: 0.72rem;
-  }
+
 
   .footer-inner {
     flex-direction: column;
@@ -898,9 +917,9 @@ h1, h2, h3, h4 {
 }
 
 .filter-btn {
-  background: var(--white);
-  border: 1.5px solid var(--gray);
-  color: var(--muted);
+  background: transparent;
+  border: 1.5px solid var(--fg);
+  color: var(--fg);
   font-family: var(--font-head);
   font-size: 0.875rem;
   font-weight: 600;
@@ -910,9 +929,9 @@ h1, h2, h3, h4 {
   transition: all var(--transition);
 }
 
-.filter-btn:hover {
-  border-color: var(--fg);
-  color: var(--fg);
+.filter-btn:hover:not(.active) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .filter-btn.active {
@@ -942,7 +961,7 @@ h1, h2, h3, h4 {
 
 .lightbox.open {
   opacity: 1;
-  pointer-events: all;
+  pointer-events: auto;
 }
 
 .lightbox-close {
@@ -1094,24 +1113,7 @@ h1, h2, h3, h4 {
   padding: 14px 24px;
 }
 
-/* ========================
-   FILTER TRANSITION STYLES
-======================== */
-.product-card {
-  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.25s ease;
-}
 
-.product-card.fade-out {
-  opacity: 0;
-  transform: scale(0.8) translateY(15px);
-  pointer-events: none;
-}
-
-.product-card.hidden-filter {
-  display: none !important;
-}
 
 @media (max-width: 768px) {
   .lightbox-content {

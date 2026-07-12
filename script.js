@@ -182,7 +182,7 @@ filterButtons.forEach(btn => {
     
     // Automatically reveal all matching items on filter change
     if (currentFilter !== 'all') {
-      currentLimit = 20;
+      currentLimit = products.length;
     } else {
       currentLimit = 8; // Reset back to default 8
     }
@@ -194,7 +194,7 @@ filterButtons.forEach(btn => {
 // Show More button click logic
 if (showMoreBtn) {
   showMoreBtn.addEventListener('click', () => {
-    currentLimit = 20; // expand limit to show all
+    currentLimit = products.length; // expand limit to show all
     renderProducts();
   });
 }
@@ -350,17 +350,19 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-// Hero Image Slideshow (randomly switch every 4 seconds with a professional cross-dissolve)
+// Hero Image Slideshow (randomly switch every 3 seconds with a professional cross-dissolve)
 const heroImg = document.getElementById('hero-slideshow-img');
 if (heroImg && products && products.length > 0) {
   const heroImages = products.map(p => p.image);
+  const heroTitles = products.map(p => p.title);
   
   // Pick a random starting image index on page load
   let currentHeroIndex = Math.floor(Math.random() * heroImages.length);
   const startImage = heroImages[currentHeroIndex];
 
-  // Set the starting image immediately
+  // Set the starting image and alt immediately
   heroImg.src = startImage;
+  heroImg.alt = heroTitles[currentHeroIndex];
 
   const parentFrame = heroImg.parentElement;
   if (parentFrame) {
@@ -384,9 +386,10 @@ if (heroImg && products && products.length > 0) {
     // Fade out the top image (takes 1.2s via transition)
     heroImg.style.opacity = '0';
 
-    // Swap src and restore opacity once fade out finishes
+    // Swap src + alt, then restore opacity once fade out finishes
     setTimeout(() => {
       heroImg.src = nextImage;
+      heroImg.alt = heroTitles[currentHeroIndex];
       heroImg.style.opacity = '1';
     }, 1200); // matching CSS opacity transition time
   };
