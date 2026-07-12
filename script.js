@@ -95,19 +95,25 @@ filterButtons.forEach(btn => {
 
       if (filterValue === 'all' || cardCategory === filterValue) {
         card.classList.remove('hidden-filter');
+        // Clear any active hiding timeouts
+        if (card.timeoutId) {
+          clearTimeout(card.timeoutId);
+          card.timeoutId = null;
+        }
         // Let it display first, then trigger opacity transition next frame
         setTimeout(() => {
           card.classList.remove('fade-out');
         }, 10);
       } else {
         card.classList.add('fade-out');
-        // Wait for fade-out transition before adding display: none
-        card.addEventListener('transitionend', function handler(e) {
-          if (e.propertyName === 'opacity' && card.classList.contains('fade-out')) {
-            card.classList.add('hidden-filter');
-            card.removeEventListener('transitionend', handler);
-          }
-        });
+        if (card.timeoutId) {
+          clearTimeout(card.timeoutId);
+        }
+        // Hide card after transition finishes (400ms matching CSS)
+        card.timeoutId = setTimeout(() => {
+          card.classList.add('hidden-filter');
+          card.timeoutId = null;
+        }, 400);
       }
     });
   });
@@ -158,6 +164,8 @@ const lightboxBadge = document.getElementById('lightbox-badge');
 const lightboxOrderBtn = document.getElementById('lightbox-order-btn');
 const lightboxClose = document.getElementById('lightbox-close');
 
+let currentBasePrice = 45;
+
 productCards.forEach(card => {
   card.addEventListener('click', (e) => {
     // If the click is on the order link inside the card footer, bypass lightbox modal opening
@@ -174,11 +182,23 @@ productCards.forEach(card => {
     const badgeEl = card.querySelector('.product-badge');
     const orderUrl = card.querySelector('.product-footer a').href;
 
+    // Determine base price dynamically (e.g. from "From RM 45" or "From RM 50")
+    const priceMatch = priceText.match(/\d+/);
+    currentBasePrice = priceMatch ? parseInt(priceMatch[0], 10) : 45;
+
+    // Reset size active selection back to A3 on open
+    const sizeTags = document.querySelectorAll('.size-tag');
+    sizeTags.forEach(t => t.classList.remove('active'));
+    const defaultSizeTag = document.querySelector('.size-tag[data-size="A3"]');
+    if (defaultSizeTag) {
+      defaultSizeTag.classList.add('active');
+    }
+
     // Populate lightbox
     lightboxImg.src = imgUrl;
     lightboxImg.alt = titleText;
     lightboxTitle.textContent = titleText;
-    lightboxPrice.textContent = priceText;
+    lightboxPrice.textContent = `From RM ${currentBasePrice}`;
     lightboxOrderBtn.href = orderUrl;
 
     if (badgeEl) {
@@ -201,6 +221,34 @@ productCards.forEach(card => {
     document.body.style.overflow = 'hidden';
   });
 });
+
+// Size selection logic in Lightbox modal
+const lightboxSizes = document.getElementById('lightbox-sizes');
+if (lightboxSizes) {
+  lightboxSizes.addEventListener('click', (e) => {
+    const tag = e.target.closest('.size-tag');
+    if (!tag) return;
+
+    lightboxSizes.querySelectorAll('.size-tag').forEach(t => t.classList.remove('active'));
+    tag.classList.add('active');
+
+    const selectedSize = tag.getAttribute('data-size');
+    let finalPrice = currentBasePrice;
+
+    if (selectedSize === 'A2') {
+      finalPrice = currentBasePrice + 20;
+    } else if (selectedSize === 'A1') {
+      finalPrice = currentBasePrice + 40;
+    }
+
+    // Update price representation: size A3 keeps "From", others show fixed price
+    if (selectedSize === 'A3') {
+      lightboxPrice.textContent = `From RM ${finalPrice}`;
+    } else {
+      lightboxPrice.textContent = `RM ${finalPrice}`;
+    }
+  });
+}
 
 // Close Lightbox functions
 const closeLightbox = () => {
