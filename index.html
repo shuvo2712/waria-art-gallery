@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waria's Art Gallery</title>
+  <meta name="description" content="Explore premium, printed-to-order wall art at Waria's Art Gallery. Browse our collections of minimalist abstracts, pop culture, anime, and nature prints to elevate your space." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">Waria's Art Gallery</a>
+      <nav class="nav" id="nav">
+        <a href="#categories">Collections</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary">Visit Facebook Page</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="hero-badge">Premium Wall Art — Printed to Order</span>
+        <h1 class="hero-headline">Transform Your Space With Premium Wall Art</h1>
+        <p class="hero-sub">Curated prints that elevate every room. From bold abstracts to serene landscapes — art that speaks, walls that impress.</p>
+        <div class="hero-actions">
+          <a href="#gallery" class="btn btn-primary btn-large">Explore Gallery</a>
+          <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-ghost btn-large">Order on Facebook</a>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <div class="hero-image-frame">
+          <img src="https://images.unsplash.com/photo-1618220048045-10a6dbdf83e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=900&q=80" alt="Modern living room with framed wall art" loading="lazy" />
+        </div>
+        <div class="hero-badge-float">
+          <span class="badge-num">200+</span>
+          <span class="badge-label">Unique Designs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider-text">
+    <span>Minimalist Abstract</span>
+    <span class="dot">·</span>
+    <span>Pop Culture &amp; Anime</span>
+    <span class="dot">·</span>
+    <span>Nature &amp; Landscapes</span>
+    <span class="dot">·</span>
+    <span>Custom Prints</span>
+    <span class="dot">·</span>
+    <span>Premium Quality</span>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <h2>Browse Collections</h2>
+        <p>Three worlds of art, one gallery. Find the perfect style for your space.</p>
+      </div>
+      <div class="categories-grid">
+        <div class="category-card" data-category="abstract">
+          <div class="category-img-wrap">
+            <img src="https://images.unsplash.com/photo-1761156254622-7b66649b1f69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=700&q=80" alt="Minimalist Abstract Art" loading="lazy" />
+            <div class="category-overlay">
+              <a href="#gallery" class="btn btn-light">View Collection</a>
+            </div>
+          </div>
+          <div class="category-info">
+            <h3>Minimalist Abstract</h3>
+            <p>Clean lines, bold forms, quiet elegance</p>
+          </div>
+        </div>
+        <div class="category-card" data-category="anime">
+          <div class="category-img-wrap">
+            <img src="https://images.unsplash.com/photo-1648316143181-247041b53999?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=700&q=80" alt="Pop Culture and Anime Art" loading="lazy" />
+            <div class="category-overlay">
+              <a href="#gallery" class="btn btn-light">View Collection</a>
+            </div>
+          </div>
+          <div class="category-info">
+            <h3>Pop Culture &amp; Anime</h3>
+            <p>Icons, characters, and culture on canvas</p>
+          </div>
+        </div>
+        <div class="category-card" data-category="nature">
+          <div class="category-img-wrap">
+            <img src="https://images.unsplash.com/photo-1759954034155-6378362c87f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=700&q=80" alt="Nature and Landscapes Art" loading="lazy" />
+            <div class="category-overlay">
+              <a href="#gallery" class="btn btn-light">View Collection</a>
+            </div>
+          </div>
+          <div class="category-info">
+            <h3>Nature &amp; Landscapes</h3>
+            <p>Serene vistas and organic beauty</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section section-gray" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Artworks</h2>
+        <p>Every piece is printed on premium paper with archival inks — built to last a lifetime.</p>
+      </div>
+
+      <!-- GALLERY FILTERS -->
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="abstract">Minimalist Abstract</button>
+        <button class="filter-btn" data-filter="nature">Nature &amp; Landscapes</button>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid">
+
+        <div class="product-card" data-category="abstract">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1586032788085-d75f745f26e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Abstract Flow No.1" loading="lazy" />
+            <div class="product-badge">Bestseller</div>
+          </div>
+          <div class="product-info">
+            <h4>Abstract Flow No.1</h4>
+            <p class="product-size">A3 / A2 / A1 Available</p>
+            <div class="product-footer">
+              <span class="price">From RM 45</span>
+              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="nature">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1700212031699-45c913d65aa2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Vintage Botanicals" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <h4>Vintage Botanicals</h4>
+            <p class="product-size">A3 / A2 / A1 Available</p>
+            <div class="product-footer">
+              <span class="price">From RM 45</span>
+              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="nature">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1615752593342-d39f4e68fae1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Mountain Silhouette" loading="lazy" />
+            <div class="product-badge new">New</div>
+          </div>
+          <div class="product-info">
+            <h4>Mountain Silhouette</h4>
+            <p class="product-size">A3 / A2 / A1 Available</p>
+            <div class="product-footer">
+              <span class="price">From RM 50</span>
+              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="abstract">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1744057137174-72a54712fd83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Geometric Bauhaus" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <h4>Geometric Bauhaus</h4>
+            <p class="product-size">A3 / A2 / A1 Available</p>
+            <div class="product-footer">
+              <span class="price">From RM 45</span>
+              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="nature">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1693068606555-fc22eae4ba0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Wildflower Study" loading="lazy" />
+            <div class="product-badge">Popular</div>
+          </div>
+          <div class="product-info">
+            <h4>Wildflower Study</h4>
+            <p class="product-size">A3 / A2 / A1 Available</p>
+            <div class="product-footer">
+              <span class="price">From RM 45</span>
+              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="nature">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1569498278089-8ea21ba1a512?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Dusk Peaks" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <h4>Dusk Peaks</h4>
+            <p class="product-size">A3 / A2 / A1 Available</p>
+            <div class="product-footer">
+              <span class="price">From RM 50</span>
+              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="abstract">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1698240087583-2f610faf1eaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Wave Motion" loading="lazy" />
+            <div class="product-badge new">New</div>
+          </div>
+          <div class="product-info">
+            <h4>Wave Motion</h4>
+            <p class="product-size">A3 / A2 / A1 Available</p>
+            <div class="product-footer">
+              <span class="price">From RM 45</span>
+              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="nature">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1693068606555-fc22eae4ba0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&q=80" alt="Iris Botanical" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <h4>Iris Botanical</h4>
+            <p class="product-size">A3 / A2 / A1 Available</p>
+            <div class="product-footer">
+              <span class="price">From RM 45</span>
+              <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Order via Facebook</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gallery-cta" id="gallery-cta">
+        <p>Don't see what you're looking for? We take custom orders!</p>
+        <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="btn btn-primary btn-large">Message Us on Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2>How It Works</h2>
+        <p>Getting your perfect print is simple — three easy steps.</p>
+      </div>
+      <div class="steps-row">
+        <div class="step">
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <div class="step-num">01</div>
+          <h3>Browse Collection</h3>
+          <p>Explore our curated gallery of premium wall art across three distinct categories.</p>
+        </div>
+        <div class="step-arrow">
+          <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28M22 2l8 6-8 6" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="step">
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="step-num">02</div>
+          <h3>Message on Facebook</h3>
+          <p>Send us a message with the artwork you love. We'll help you choose the perfect size.</p>
+        </div>
+        <div class="step-arrow">
+          <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28M22 2l8 6-8 6" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="step">
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="step-num">03</div>
+          <h3>We Print &amp; Deliver</h3>
+          <p>Your art is printed on premium paper and delivered straight to your door, carefully packed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL STRIP -->
+  <section class="testimonial-strip">
+    <div class="container">
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>"The quality blew me away. Every guest asks where I got it."</p>
+          <span>— Aisha R.</span>
+        </div>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial">
+          <p>"Fast delivery, stunning print. Ordered three more for my office."</p>
+          <span>— Marcus T.</span>
+        </div>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial">
+          <p>"The anime collection is incredible. Exactly as pictured."</p>
+          <span>— Nurul H.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo">Waria's Art Gallery</span>
+          <p>Premium wall art, printed with love.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#categories">Collections</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener">Facebook Page</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Waria's Art Gallery. All rights reserved.</p>
+        <a href="https://www.facebook.com/WariasArtGallery" target="_blank" rel="noopener" class="footer-fb">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Facebook
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close details dialog">&times;</button>
+    <div class="lightbox-content">
+      <div class="lightbox-img-wrap">
+        <img id="lightbox-img" src="" alt="Zoomed view of artwork" />
+      </div>
+      <div class="lightbox-details">
+        <span class="lightbox-badge" id="lightbox-badge">Bestseller</span>
+        <h3 id="lightbox-title">Artwork Title</h3>
+        <p class="lightbox-price" id="lightbox-price">From RM 45</p>
+        <p class="lightbox-sizes-title">Available Sizes:</p>
+        <div class="lightbox-sizes" id="lightbox-sizes">
+          <span class="size-tag">A3 (29.7 x 42 cm)</span>
+          <span class="size-tag">A2 (42 x 59.4 cm)</span>
+          <span class="size-tag">A1 (59.4 x 84.1 cm)</span>
+        </div>
+        <p class="lightbox-desc">Every artwork is professionally printed to order on heavyweight premium matte archival paper. We use archival pigment inks to deliver vibrant colors and deep blacks that are built to last a lifetime without fading. Carefully packaged and rolled in a heavy-duty cardboard tube to ensure safe delivery.</p>
+        <a href="https://www.facebook.com/WariasArtGallery" id="lightbox-order-btn" target="_blank" rel="noopener" class="btn btn-primary btn-large">
+          Order via Facebook
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
